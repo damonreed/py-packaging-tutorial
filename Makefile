@@ -12,19 +12,13 @@ VENV_NAME := venv
 PYTHON := python3
 PACKAGE_NAME := py_packaging_tutorial
 
-all: build
+all: clean build
 
 build: $(VENV_NAME)
 	$(VENV_NAME)/bin/python build
 
 clean:
-	rm -rf build dist $(PROJECT_NAME).egg-info
-
-install: $(VENV_NAME)
-	$(VENV_NAME)/bin/python setup.py install
-
-uninstall:
-	pip uninstall -y $(PROJECT_NAME)
+	rm -rf dist $(VENV_NAME)
 
 $(VENV_NAME):
 	$(PYTHON) -m venv $(VENV_NAME)
