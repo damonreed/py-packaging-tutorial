@@ -2,17 +2,22 @@
 # Makefile for the py-packaging-tutorial project.
 #
 # Targets:
-#   all:        Build the project.
+#   all:        Clean out old build artifacts, build the project, and install it.
 #   clean:      Remove all build artifacts.
-#   install:    Install the project.
-#   uninstall:  Uninstall the project.
-
+#   build:      Build the project to the dist/ directory.
+#   upload:     Upload the project to the test PyPI server.
+#   test:       Create a virtual environment, install the project, and run the tests.
+#
+# Variables:
 PROJECT_NAME := py-packaging-tutorial
 VENV_NAME := venv
 PYTHON := python3
 PACKAGE_NAME := example_package_damonreed
 TEST_PATH := tests
 
+## Makefile targets
+
+# Default target
 all: clean build upload
 
 clean:
